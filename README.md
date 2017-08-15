@@ -43,9 +43,9 @@ concourse web \
   
  ## Test
  Create file hello.yml
- 
+@ 
 jobs:
-- name: hello-world
+ - name: hello-world
   plan:
   - task: say-hello
     config:
@@ -53,7 +53,7 @@ jobs:
       run:
         path: echo
         args: ["Hello, world!"]
-        
+@      
   Create target  : fly -t lite login -c http://127.0.0.1:9999
   
   Add the hello pipeline : fly -t lite set-pipeline -p hello-world -c hello.yml
